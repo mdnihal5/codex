@@ -47,7 +47,7 @@ const UserContextProvider: React.FC<UserContextProviderProps> = ({ children }) =
                 throw new Error("Failed to fetch resumes");
             }
         } catch (error) {
-            setError("Error fetching resumes");
+            setError("Error fetching resumes ");
         } finally {
             setIsLoading(false);
         }
