@@ -1,6 +1,6 @@
 {
     "rewrites": [
-        { "source": "/api/:path(.*)", "destination": "https://codex-test-8p37.onrender.com/" },
+        { "source": "/api/:path*", "destination": "https://codex-test-8p37.onrender.com/:path" },
         { "source": "/(.*)", "destination": "/" }
     ]
 }
