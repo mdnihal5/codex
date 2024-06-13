@@ -1,0 +1,6 @@
+{
+    "rewrites": [
+        { "source": "/api/:path(.*)", "destination": "http://codex-x-server.vercel.app" },
+        { "source": "/(.*)", "destination": "/" }
+    ]
+}
