@@ -18,6 +18,7 @@ export interface Message {
   userId:string;
   username:string;
   text:string;
+  date:string;
 }
 export interface Resume {
   _id:string;

@@ -9,19 +9,27 @@ import LogInForm from "./components/Auth/LoginForm";
 import SignUpForm from "./components/Auth/SignUpForm";
 import Resources from "./pages/Resources/Resources";
 import Resumes from "./pages/Resumes/Resumes";
+import Chats from "./pages/ChatScreen/Chats"
 
 const App: React.FC = () => {
-    const { getBlogs, getResumes, isAuthenticated } = useContext(userContext) as UserContextType;
+    const { getBlogs, getResumes,getMessages, isAuthenticated } = useContext(userContext) as UserContextType;
     useEffect(() => {
-        getBlogs();
-        getResumes();
+        const intervalId = setInterval(() => {
+            getBlogs();
+            if(isAuthenticated) getResumes();
+            if(isAuthenticated) getMessages();
+        }, 1000);
+
+        return () => {
+          clearInterval(intervalId);
+        };
     }, []);
     return (
         <>
             <Routes>
                 <Route path="/" element={<HomePage />} />
                 <Route path="/login" element={<LogInForm />} />
-                <Route path="/chats" element={<h1>Comming Soon ! Yet to implement</h1>} />
+                <Route path="/chats" element={isAuthenticated && <Chats/>} />
                 <Route path="/register" element={<SignUpForm />} />
                 <Route path="/error" element={<ErrorPage />} />
                 <Route path="/resumes" element={isAuthenticated && <Resumes />} />

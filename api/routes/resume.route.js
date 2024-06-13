@@ -5,7 +5,7 @@ import { create, deleteresume, getresumes } from '../controllers/resume.controll
 const router = express.Router();
 
 router.post('/create', verifyToken, create)
-router.get('/getposts', getresumes)
+router.get('/getposts', verifyToken, getresumes)
 router.delete('/deletepost/:postId/:userId', verifyToken, deleteresume)
 
 

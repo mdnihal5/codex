@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import authRoutes from "./routes/auth.route.js";
 import blogRoutes from "./routes/blog.route.js";
 import resumeRoutes from "./routes/resume.route.js";
+import chatRoutes from "./routes/chat.route.js";
 import cookieParser from "cookie-parser";
 import path from "path";
 import { fileURLToPath } from 'url';
@@ -27,6 +28,7 @@ app.use(cookieParser());
 app.use("/api/auth", authRoutes);
 app.use("/api/blog", blogRoutes);
 app.use("/api/resume", resumeRoutes);
+app.use("/api/chats",chatRoutes);
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
