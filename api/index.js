@@ -24,20 +24,16 @@ const app = express();
 app.use(express.json());
 app.use(cookieParser());
 
+app.get("/",(req,res)=>{
+  res.send("Server is working!")
+})
+
 
 app.use("/api/auth", authRoutes);
 app.use("/api/blog", blogRoutes);
 app.use("/api/resume", resumeRoutes);
 app.use("/api/chats",chatRoutes);
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-
-const distDirectory = path.join(__dirname, '../client/dist');
-app.use(express.static(distDirectory));
-app.get('/', (req, res) => {
-  res.sendFile(path.join(distDirectory, 'index.html'));
-});
 
 app.use((err, req, res, next) => {
   const statusCode = err.statusCode || 500;
