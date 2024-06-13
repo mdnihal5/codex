@@ -11,6 +11,7 @@
         }
     ],
       "rewrites": [
+        { "source": "/api/:path*","destination": "http://codex-x-server.vercel.app/api/v1/:path*"},
         { "source": "/api/(.*)", "destination": "/index.js" },
         { "source": "/(.*)", "destination": "/index.js" }
 
