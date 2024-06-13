@@ -23,7 +23,7 @@ const App: React.FC = () => {
         return () => {
           clearInterval(intervalId);
         };
-    }, []);
+    }, [isAuthenticated]);
     return (
         <>
             <Routes>
