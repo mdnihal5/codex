@@ -13,7 +13,12 @@ export interface Blog {
   title: string;
   content: string;
 }
-
+export interface Message {
+  _id:string;
+  userId:string;
+  username:string;
+  text:string;
+}
 export interface Resume {
   _id:string;
   id: string;
@@ -40,6 +45,9 @@ export interface UserContextType {
   setError: React.Dispatch<React.SetStateAction<string>>;
   getBlogs: () => Promise<void>;
   getResumes: () => Promise<void>;
+  getMessages:()=>Promise<void>;
+  messages:Message[];
+  setMessages:React.Dispatch<React.SetStateAction<Message[]>>;
 }
 
 const userContext = React.createContext<UserContextType | undefined>(undefined);
