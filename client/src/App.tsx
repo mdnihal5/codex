@@ -18,7 +18,7 @@ const App: React.FC = () => {
             getBlogs();
             if(isAuthenticated) getResumes();
             if(isAuthenticated) getMessages();
-        }, 1000);
+        }, 5000);
 
         return () => {
           clearInterval(intervalId);
