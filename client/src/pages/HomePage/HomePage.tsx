@@ -3,24 +3,18 @@ import { Link } from "react-router-dom";
 function HomePage() {
     return (
         <div className="flex min-h-screen flex-col dark:text-black">
-            <section className="light:bg-[#8B5CF6] py-20 dark:text-white">
-                <div className="container mx-auto flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8">
+            <section className="light:bg-[#8B5CF6] py-16 dark:text-white">
+                <div className="container mx-auto pt-8 flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8">
                     <h1 className="text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">Unlock Your Potential</h1>
                     <p className="mt-6 text-lg leading-8">Explore our comprehensive resources and tools to enhance your development journey.</p>
                     <div className="mt-10 flex space-x-6">
                         <Link className="rounded-md bg-[#003366] flex gap-1 px-4 py-2 text-sm text-white font-medium hover:bg-[#002147]" to="/resources">
                             Explore Resources <ArrowRight size="20" />
                         </Link>
-                        {/*            <Link
-              className="rounded-md flex gap-1 bg-[#003366] px-4 py-2 text-sm text-white font-medium hover:bg-[#002147]"
-              to="/chats"
-            >
-              Help Desk <MessageSquare size='20'/>
-            </Link>*/}
                     </div>
                 </div>
             </section>
-            <section className="light:bg-[#F3F4F6] py-20">
+            <section className="light:bg-[#F3F4F6] py-4">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                     <h2 className="text-3xl dark:text-white font-bold tracking-tight">Resources</h2>
                     <div className="mt-10 grid grid-cols-1 gap-8  md:grid-cols-2 lg:grid-cols-4">
@@ -67,8 +61,8 @@ function HomePage() {
                         <Link className="rounded-md bg-[#003366] px-4 py-2 text-sm font-medium hover:bg-[#002147]" to="/">
                             Contact Us
                         </Link>
-                        <Link className="rounded-md bg-[#003366] px-4 py-2 text-sm font-medium hover:bg-[#002147]" to="/">
-                            FAQs
+                        <Link className="rounded-md bg-[#003366] px-4 py-2 text-sm font-medium hover:bg-[#002147]" to="/chats">
+                            Help Desk
                         </Link>
                     </div>
                 </div>

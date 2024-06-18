@@ -2,7 +2,7 @@ import Post from "../models/post.model.js";
 import { errorHandler } from "../utils/error.js";
 
 export const create = async (req, res, next) => {
-    if (req.body.category || !req.body.link || !req.body.title || !req.body.content) {
+    if (!req.body.category || !req.body.link || !req.body.title || !req.body.content) {
         return next(errorHandler(400, "Please provide all required fields"));
     }
     const newPost = new Post({
