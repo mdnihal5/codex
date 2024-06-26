@@ -35,7 +35,7 @@ const __dirname = path.dirname(__filename);
 
 const distDirectory = path.join(__dirname, '../client/dist');
 app.use(express.static(distDirectory));
-app.get('/', (req, res) => {
+app.get('*', (req, res) => {
   res.sendFile(path.join(distDirectory, 'index.html'));
 });
 
