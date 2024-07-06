@@ -9,7 +9,7 @@ import { SheetTrigger, SheetContent, Sheet } from "../ui/sheet";
 import ThemeToggle from "../../utils/ThemeToggle";
 import userContext, { UserContextType } from "../../utils/userContext";
 import { toast } from "react-hot-toast";
-import { Link as LucidLink, CircleArrowOutUpRight, FileSearch2 ,MessagesSquare} from "lucide-react";
+import { Link as LucidLink, CircleArrowOutUpRight, FileSearch2, MessagesSquare } from "lucide-react";
 interface NavLinkProps {
     to: string;
     text: string;
@@ -19,7 +19,7 @@ const Logo = (text: any) => {
     if (text == "Resources") return <LucidLink size="15" />;
     if (text == "Resumes") return <FileSearch2 size="15" />;
     if (text == "Roadmap") return <CircleArrowOutUpRight size="15" />;
-    if(text=="Help Desk") return <MessagesSquare size='13'/>;
+    if (text == "Help Desk") return <MessagesSquare size="13" />;
 };
 const NavLink: FC<NavLinkProps> = ({ to, text, onClick }) => (
     <Link
@@ -55,7 +55,7 @@ const Navbar: FC = () => {
 
     const handleLogout = async () => {
         try {
-            const res = await fetch("/api/auth/signout", {
+            const res = await fetch("https://codex-v2-16i3.onrender.com/api/auth/signout", {
                 method: "POST",
             });
             if (res.ok) {
@@ -91,11 +91,7 @@ const Navbar: FC = () => {
                 </Link>
                 <nav className="hidden items-center gap-4 md:flex">
                     <NavLink to="/resources" text="Resources" />
-                            <NavLink
-            to={userContextValue.isAuthenticated ? "/chats" : "/login"}
-            text="Help Desk"
-            onClick={handleNavLinkClick}
-          />
+                    <NavLink to={userContextValue.isAuthenticated ? "/chats" : "/login"} text="Help Desk" onClick={handleNavLinkClick} />
                     <NavLink to={userContextValue.isAuthenticated ? "/resumes" : "/login"} text="Resumes" onClick={handleNavLinkClick} />
                     <NavLink to="https://roadmap.sh" text="Roadmap" />
                 </nav>
@@ -127,11 +123,7 @@ const Navbar: FC = () => {
                         <SheetContent className="light:text-black dark:text-white" side="left">
                             <div className="flex flex-col gap-4 p-6">
                                 <NavLink to="/resources" text="Resources" />
-                                <NavLink
-                  to={userContextValue.isAuthenticated ? "chats" : "login"}
-                  text="Help Desk"
-                  onClick={handleNavLinkClick}
-                />
+                                <NavLink to={userContextValue.isAuthenticated ? "chats" : "login"} text="Help Desk" onClick={handleNavLinkClick} />
                                 <NavLink to={userContextValue.isAuthenticated ? "resumes" : "login"} text="Resumes" onClick={handleNavLinkClick} />
                                 <NavLink to="https://roadmap.sh" text="Roadmap" />
                             </div>

@@ -52,7 +52,7 @@ const Resources: React.FC = () => {
     const deletePost = async (postIdToDelete: string, currentUser: string) => {
         console.log(currentUser, postIdToDelete);
         try {
-            const res = await fetch(`/api/blog/deletepost/${postIdToDelete}/${currentUser}`, {
+            const res = await fetch(`https://codex-v2-16i3.onrender.com/api/blog/deletepost/${postIdToDelete}/${currentUser}`, {
                 method: "DELETE",
             });
             const data = await res.json();
@@ -72,7 +72,7 @@ const Resources: React.FC = () => {
     const postHandler = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         try {
-            const res = await fetch("/api/blog/create", {
+            const res = await fetch("https://codex-v2-16i3.onrender.com/api/blog/create", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
