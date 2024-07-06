@@ -55,7 +55,7 @@ const Navbar: FC = () => {
 
     const handleLogout = async () => {
         try {
-            const res = await fetch("https://codex-v2-16i3.onrender.com/api/auth/signout", {
+            const res = await fetch("/api/auth/signout", {
                 method: "POST",
             });
             if (res.ok) {

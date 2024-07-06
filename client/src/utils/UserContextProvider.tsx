@@ -15,7 +15,7 @@ const UserContextProvider: React.FC<UserContextProviderProps> = ({ children }) =
 
     const getBlogs = async () => {
         try {
-            const res = await fetch(`https://codex-v2-16i3.onrender.com/api/blog/getposts`);
+            const res = await fetch(`/api/blog/getposts`);
             if (res.ok) {
                 const data = await res.json();
                 setBlogs(data.posts);
@@ -29,7 +29,7 @@ const UserContextProvider: React.FC<UserContextProviderProps> = ({ children }) =
         }
     };
     const getMessages = async () => {
-        const res = await fetch("https://codex-v2-16i3.onrender.com/api/chats/messages");
+        const res = await fetch("/api/chats/messages");
         if (res.ok) {
             const data = await res.json();
             setMessages(data.messages);
@@ -39,7 +39,7 @@ const UserContextProvider: React.FC<UserContextProviderProps> = ({ children }) =
     };
     const getResumes = async () => {
         try {
-            const res = await fetch(`https://codex-v2-16i3.onrender.com/api/resume/getposts`);
+            const res = await fetch(`/api/resume/getposts`);
             if (res.ok) {
                 const data = await res.json();
                 setResumes(data.resumes);

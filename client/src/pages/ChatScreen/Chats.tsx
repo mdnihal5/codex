@@ -13,7 +13,7 @@ const Chats: FC = () => {
   const handleSendMessage = async (e: any) => {
     e.preventDefault();
     try {
-      const res = await fetch("https://codex-v2-16i3.onrender.com/api/chats/create", {
+      const res = await fetch("/api/chats/create", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

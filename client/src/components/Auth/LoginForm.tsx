@@ -18,7 +18,7 @@ function LogInForm() {
             return toast.error("Please fill all the fields");
         }
         try {
-            const res = await fetch("https://codex-v2-16i3.onrender.com/api/auth/signin", {
+            const res = await fetch("/api/auth/signin", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({

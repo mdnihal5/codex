@@ -69,7 +69,7 @@ const Resumes = () => {
 
     const deleteResume = async (postIdToDelete: any, currentUser: any) => {
         try {
-            const res = await fetch(`https://codex-v2-16i3.onrender.com/api/resume/deletepost/${postIdToDelete}/${currentUser}`, {
+            const res = await fetch(`/api/resume/deletepost/${postIdToDelete}/${currentUser}`, {
                 method: "DELETE",
             });
             const data = await res.json();
@@ -97,7 +97,7 @@ const Resumes = () => {
                 link: link,
             };
             console.log(formdata);
-            const res = await fetch("https://codex-v2-16i3.onrender.com/api/resume/create", {
+            const res = await fetch("/api/resume/create", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
