@@ -5,7 +5,7 @@ import { defineConfig } from "vite";
 export default defineConfig({
   server: {
     proxy: {
-      "/api": "https://codex-v2-16i3.onrender.com",
+      "/api": "http://localhost:3000",
     },
   },
   plugins: [react()],
