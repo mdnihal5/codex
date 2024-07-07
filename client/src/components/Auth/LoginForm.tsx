@@ -26,15 +26,17 @@ function LogInForm() {
                     password: password,
                 }),
             });
-            const data: any = await res.json(); // Add type annotation for data
+            const data: any = await res.json();
             if (data.success === false) {
                 toast.error("login failed");
             }
 
             if (res.ok) {
                 setIsAuthenticated(true);
-                toast.success("login successful");
-                setUser(data);
+                localStorage.setItem("user", JSON.stringify(data.user));
+                localStorage.setItem("access_token", data.token);
+                toast.success("Login successful");
+                setUser(data.user);
                 navigate("/");
             }
         } catch (error) {

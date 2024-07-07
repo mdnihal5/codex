@@ -61,6 +61,7 @@ const Navbar: FC = () => {
             if (res.ok) {
                 toast.success("Logout successful");
                 userContextValue.setIsAuthenticated(false);
+                localStorage.clear();
                 userContextValue.setUser(null);
                 navigate("/");
             }
@@ -102,7 +103,7 @@ const Navbar: FC = () => {
                             <DropdownMenuTrigger asChild>
                                 <Avatar className="h-8 w-8 transition-transform duration-300 ease-in-out hover:scale-110">
                                     <AvatarImage alt="@shadcn" src="/placeholder-avatar.jpg" />
-                                    <AvatarFallback>JP</AvatarFallback>
+                                    <AvatarFallback>{userContextValue.user ? userContextValue.user.username.substr(0, 2) : "T"}</AvatarFallback>
                                     <span className="sr-only">Toggle user menu</span>
                                 </Avatar>
                             </DropdownMenuTrigger>
